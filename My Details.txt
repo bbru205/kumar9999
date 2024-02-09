@@ -1,0 +1,85 @@
+Hi 
+I am Ashok Kumar Baddi
+I am From  Visakhapatnam
+I have done My B-Tech in 2016 with A grade ( in Kakinada Institute Of Engineering & Technology )
+
+
+Company Name & Details : 
+			name :	USS Designers Software Solutions Private Limited
+			I'd 	: uss-315
+			Mail 	: ashokkumarbaddi@ussdisgner.in
+
+			Working Experience : 20/04/2019 To Still Date
+			Address : 
+				1st Floor
+				A2 Square Building
+				Silicon Valley
+				Madhapur
+				Telangana-500081
+			
+			Mumbai Address (current): 
+				Flat no 703
+				Block-B
+				Ranjana Heights
+				Nardas Nagar
+				Bhandup West 
+				Mumbai-400078
+			
+
+=> 4.5 years of experience in DevOps Engineer, In the Conpany of USS designer software solutions pvt Ltd
+=> Hear I am explaining the roles and respondsbulites
+
+
+ I am confident in my ability to make a significant contribution to your team.
+Throughout my career, 
+=> I have gained a wealth of experience in designing, implementing, and maintaining DevOps systems that improve efficiency and 
+	optimize workflows. 
+My expertise in automation tools, such as Ansible, K8s enables me to manage complex infrastructure and 
+	deployment pipelines with ease.
+I have a proven track record of successfully implementing continuous integration and continuous delivery pipelines 
+	that have resulted in faster time-to-market, reduced errors, and increased quality of software releases. 
+Additionally, my strong understanding of containerization and orchestration technologies, such as Docker and Kubernetes, 
+	enables me to deploy and manage containerized applications efficiently.
+Haveing hands on experience on working with SoftwareTools like " GIT , Maven, Jenkins, Docker, Kubernetes, Terraform, Ansible, 
+	Azure DevOps, JFrog, AWS Clould. and am comfortable adapting to new technologies.
+My expertise also extends to monitoring and alerting systems, including ELK Stack, AWS Cloud Watch, 
+	which help in identifying performance bottlenecks and optimizing application performance.
+Apart from my technical skills, I am a team player who thrives in a collaborative environment. 
+I have excellent communication and interpersonal skills that enable me to effectively communicate 
+	complex technical concepts to team members and stakeholders.
+I am excited about the prospect of joining your team and contributing to your continued success. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I Have 4+ years of experience in the field, I am confident in my ability to make a significant contribution to your team.
+Throughout my career, 
+I have gained a wealth of experience in designing, implementing, and maintaining DevOps systems that improve efficiency and 
+	optimize workflows. 
+My expertise in automation tools, such as Ansible, K8s enables me to manage complex infrastructure and 
+	deployment pipelines with ease.
+I have a proven track record of successfully implementing continuous integration and continuous delivery pipelines 
+	that have resulted in faster time-to-market, reduced errors, and increased quality of software releases. 
+Additionally, my strong understanding of containerization and orchestration technologies, such as Docker and Kubernetes, 
+	enables me to deploy and manage containerized applications efficiently.
+Haveing hands on experience on working with SoftwareTools like " GIT , Maven, Jenkins, Docker, Kubernetes, Terraform, Ansible, 
+	Azure DevOps, JFrog, AWS Clould. and am comfortable adapting to new technologies.
+My expertise also extends to monitoring and alerting systems, including ELK Stack, AWS Cloud Watch, 
+	which help in identifying performance bottlenecks and optimizing application performance.
+Apart from my technical skills, I am a team player who thrives in a collaborative environment. 
+I have excellent communication and interpersonal skills that enable me to effectively communicate 
+	complex technical concepts to team members and stakeholders.
+I am excited about the prospect of joining your team and contributing to your continued success.

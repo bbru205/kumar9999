@@ -1,0 +1,928 @@
+ ROLES & RESPONSIBILITIES
+				----------------------------------------------------------------------------
+				----------------------------------------------------------------------------
+				----------------------------------------------------------------------------
+
+
+
+   		Explain your roles & responsiblities (or) explain the project you're working on (or) introduce yourself.
+
+	Ø I am currently working for ***COMPANY*** in ***LOCATION***, for a product owner/client called ***CLIENT_NAME***. 
+	Ø This is an application related to ***SECTOR/DOMAIN_NAME***.
+	Ø I've been involved with this project for the ***YOUR TENURE IN THIS PROJECT*** and total experience in devops being ***TOTAL_EXPERIENCE***.
+
+
+
+	Ø One of my core responsibilities here is to setup CI-CD pipelines for which we are using Jenkins. 
+	Ø I write the necessary groovy script files which download the code, build the code into an application, test the application and deploy it. 
+	Ø Since we execute multiple pipeline jobs on jenkins parallely, slave m/c's were setup to distribute the workload from the Jenkins master node.
+
+
+	Ø over here I am responsible for setting up the infrastructure on aws using terraform scripts.
+	Ø  I've automated the process of setting up VPC's, dividing them into subnets and launching the necessary spot EC2 instances based on customized AMI's. 
+		
+		
+	Ø Docker is being used extensively in our project and i was responsible for setting up various dev & testing environments using docker compose.
+	Ø  I've also containerized legacy applications into docker based applications by designing the needed dockerfiles. 
+	Ø I am experienced in implementing docker at the level of production using both DockerSwarm & k8s.
+
+				
+				
+	Ø I have extensive experience in writing k8s definition files and HELM charts for handling production-related activities like load balancing, scaling, performing rolling updates by providing high-availability.
+				
+				
+	Ø The applications are running on aws data centers located in ***AWS_REGION***. The applications are running on nearly ***SERVER COUNT (2000)*** servers.
+				
+	Ø We configure various softwares across these servers using Ansible remotely. 
+	Ø I perform required changes on these servers through ansible playbooks and ansible roles.
+				
+	Ø These are the primary tools I've worked on in the past couple of years while being involved in this project.
+
+
+
+													 CI/CD
+										-------------------------------------------
+	
+	
+	                       Explain the CI/CD pipeline / Explain the flow of your CI/CD in your project.
+	
+	Ø The application i am working on is a java based application. 
+	Ø Developers check-in the java code onto the   remote Git repo where the declarative pipeline jobs, 
+	Ø I've created on jenkins, receive webhooks notifications   & then the code gets downloaded. 
+	Ø The next stage which is called as Build, 
+	Ø I've configured jenkins to create an artifact from the downloaded code with the help of build tool maven.
+
+
+	Ø In the next stage, jenkins creates a dockerfile & copies the artifact into the dockerfile and builds a customised docker image out of it. 
+	Ø I've then configured jenkins to upload this image onto the docker registry. 
+	Ø Then the ansible playbooks i've created downloads this docker image and sets it up as containers in the testing servers.
+	Ø These ansible playbooks are executed from the level of jenkins. 
+						
+						
+	Ø We've a team of testers who create automated testing scripts using selenium. 
+	Ø I've configured my jenkins to execute these selenium programs to check whether the application is working correctly or not. 
+	Ø If all this turns out successful, jenkins will now deploy this docker image into the staging environment which runs on k8s. 
+	Ø This is done by jenkins by using the necessary deployment and service definition files. 
+						
+						
+	Ø These pipeline scripts are generally executed for our sprint releases & our general sprint duration is b/w 3-4 weeks.
+	Ø  But we also have sub-sprints once in every 2-3 days which might be related to bug-fixes and enhacements and patch releases.
+
+
+	Ø During this time it's my responsibility to make the necessary changes to the jenkins files and ensure the smooth process of CI/CD.
+						
+						
+	Ø I've also setup slave m/c's to distribute the work load and enhance the performance of jenkins. 
+	Ø I've setup shared libraries to create user-defined funtions. 
+	Ø Our developers upload multiple functionalities code onto varioius branches. 
+	Ø So I've designed multi-branch pipeline jobs which work on multiple branches simultaneously.
+
+
+
+
+									AWS RESPONSIBILITIES
+									
+	Explain about which cloud you've worked on and what is the infrastructure you've setup.
+	
+	Ø The client uses AWS as the cloud service porvider. 
+	Ø I work on aws but my involvement with infrastructure setup is very minimal as we have a seperate team for keeping the infrastructure up and running and administering various other web services. 
+
+
+	Ø My core responsiblities and area of work is on devops tools like docker, k8s, ansible and jenkins etc.
+	Ø But i did design write terraform scripts using aws provider through which i've automated the process of setup of VPC's,creating subnets in it, attaching internet gateways and security groups and finally launching the necessary ec2 instances based on customised AMI's and snapshots we have created.
+
+
+										
+							ARCHITECTURE SETUP ON DOCKER
+							
+	Explain the architecture that you've setup using docker / tell me what you've done on docker.
+	
+	
+	Ø The project i am working on is a java based application. 
+	Ø The application servers are running on tomcat and databases are running on MySQL.
+	Ø  This entire development environment, i was responsible to setup as docker containers. 
+							
+	Ø For this, I've designed the docker compose files, i was also responsible for creating customised docker images based on applications currently running on traditional linux servers. 
+	Ø I designed various bridge networks for setting up of these environements and for persistence of data used docker volumes extensively.
+												
+	(cont. with cross browser -cross platform testing if the interviewer is expecting more on docker).
+							
+										ARCHITECTURE SETUP ON k8
+										
+						    Explain the architecture that you've setup in k8s.
+	Ø The previous project that i worked for is for ***DOMAIN_NAME***. 
+	Ø This is an application created using python and this is exposed to the customers. 
+	Ø Whatever activities they perform on this application are registered in an in-memory database that is setup using Redis. 
+	Ø From here, we have a dotnet application which filters the data and stores it permenantly in persistent database created using MySQL(or anyother DB). 
+	Ø This postgres ql database is linked with a node.js application where we can view the transaction results of the activites  performed in the python application. 
+
+	Ø This entire architecture I've setup using k8s definition files. 
+	Ø For this we used EKS as a managed k8s platform on which we deployed this entire architecture in the form of deployments and statefulSets. 
+
+	Ø For example: for the python and node.js application, i've created deployment definition files and for MySQL I've setup statefulSet definition files. 
+	Ø These statefulSet objects I've linked with Persistent Volume through a Persistent Volume Claim. 
+	Ø Similarly I've also created the necessary service object of the type clusterIP or LoadBalancer based on requirement. 
+
+
+									ANSIBLE RESPONSIBILITIES
+							
+Explain what you've done on ansible / Tell me the kind of playbooks or roles that you've created on ansible
+												(or)
+									Ansible Responsiblities
+
+	Ø our applications are running on aws data center located in ***REGION/S*** and to configure any applications on these remote servers.
+	Ø  I've designed ansible playbooks and roles for configuring applications like apache tomcat and databases like Postgres and even running docker containers. 
+
+
+	Ø I have come up with components such as Variables, handlers and roles to acheive higher levels of reusability within ansible.
+
+									GIT BRANCHING STRATEGY
+				
+				Explain the Git branching strategy that is followed in your project
+
+
+	
+	Ø In our organization, we have DEV branch, TEST branch, STAGING branch, PROD branch (master, release) & HOTFIX branch Developers create sub-feature branches from DEV branch & create different functionalities code individually on these branches. 
+	Ø Later, these feature branches are merged with the DEV branch & the DEV branch code is compiled & built into an artifact. 
+
+
+	Ø This artifact is deployed into the DEV servers where developers perform basic Unit testing. 
+	Ø Once this is successful, the entire DEV branch code is merged with the TEST branch and the artifacts are deployed into the QA servers where selenium testers perform functional testing.
+
+
+	Ø Once this turns out to be successful ,this code is then merged with the STAGING branch & it is deployed into the staging servers where we perform UAT testing & then it is merged with the MASTER/RELEASE branch. 
+						
+	Ø and then deployed into the live environment. If the customer has any bugs or enhancement requests, we merge the RELEASE branch with the HOTFIX branch where bug fixing is done, tested & merged back into the RELEASE branch.
+	Ø And then we trigger a rolling update operation into the production environment. 
+
+
+								ACCOMPLISHMENTS / CONTRIBUTIONS
+							
+	explain any of your accomplishments (or) mention your accomplishments.   
+														(or) 
+	Tell one scenario where you've contributed to your project as a devops engineer
+
+
+	Ø This happened recently, we had a team of testers who were performing cross browser cross platform testing using selenium. 
+	Ø Our testing team estimated (approxiamately) 800+ browser and OS combinations on which they wanted to perform this cross-browser cross- platform testing. 
+	Ø Since creating such huge infrastructure was quite challenging, our management depended on a cloud service provider called Sauce Labs and this was quite expensive. 
+
+	Ø Here i took initiative and performed a POC (Proof Of Concept) and checked whether this entire environment could be created using docker. 
+	Ø It was a time consuming process initially as i had to create customised docker images with various browsers installed on it. For this I've designed the dockerfiles.
+
+	Ø These docker images, I've uploaded them into our  private ECR and then i designed docker compose files to create containers from these images. 
+	Ø Since we had some limitations with Windows based images, we were not able to dockerize the entire environment, 
+	Ø but I was able to setup more than 600 containers which were different OS's with different versions of browsers installed and run it on one server. 
+
+	Ø For the remaining windows based containers our organisation is still dependent on Sauce Labs, but i was 
+able to successfully reduce the costs by approximately 75% by running them as containers. 
+
+	Ø   This was a very big accomplishment for me and I received a appreciation from our manager and also the client.
+
+
+											       CHALLENGES
+											
+			Explain any challenging tasks that you've handled. (or) any challenges ?
+
+	Ø in my previous project i was actually perfoming ci-cd activities, using jenkins. 
+	Ø for which we were depending on free style projects. Now our management decided to convert these free style jobs into pipeline based jenkins jobs and this task was assigned to me. 
+
+	Ø Since i don't come from coding background, i felt it quite challenging. i wondered why my management was making things complicated for a simple ci-cd flow which we could perform through navigations. 
+	Ø But as it was a decision coming from the level of management, I started learning groovy scripting and slowly designed declarative pipeline jobs and created shared libraries for code reusability. 
+						
+	Ø Though this took a few weeks of my time initially, I am happy that i could enhance my knowledge on groovy and i also understood the advantage of pipeline based jenkins jobs as compared free style projects. 
+
+	Ø These pipeline jobs which are created in the form of Jenkins files can be uploaded into the git repository from where we can download into any jenkins server. 
+	Ø So even if my jenkins server crashes we can recreate another jenkins server and download the same jenkins files from the git repository.
+						 
+	Ø Similarly, these pipeline based jobs can perform the flow of CI-CD without the help of any jenkins plugins. So they are more faster and secure.
+						
+	Ø This was one area where I felt a little pressure, but the end result was that i could improve my skills.
+
+														
+														
+														
+														
+											DOCKER
+													
+
+
+1. What's the difference between ADD & COPY key words in a dockerfile.
+
+		Ø Both COPY & ADD can be used for copying files from the host machine into the customised image that is created.
+		Ø But ADD can also download files from remote servers and it can also extract zipped files. 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+2. Explain the difference between CMD and ENTRYPOINT
+
+		Ø Whenever we create a container, it triggers one command which is called as the default command of the container.
+		Ø This default can be specified using either entrypoint or CMD instruction. The difference is when we specify this
+		Ø default process using entrypoint we cannot change it in the docker run command by passing some other arguments. 
+		Ø But if the default process is specified using CMD then we can change it in the docker run command by passing some arguments. 
+		
+		Ø ENTRYPOINT is the another instruction used to specify the behaviour of container once started. 
+		Ø Just like with CMD, we need to specify a command and parameters. 
+		Ø However, in the case of ENTRYPOINT we cannot override the ENTRYPOINT instructions by adding command-line parameters to the docker run command. 
+		Ø By opting for this instruction method, you imply that the container is specifically built for certain use-cases where command should not be overridden.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. What is / Explain the difference between Virtualization and containerization
+    Explain the architecture of Docker	
+
+		Ø In Virtualization, we use a software called as Hypervisor, on top of this hypervisor, we can run whichever O.S
+		we want in the form of Guest O.S and on these guest O.S's, we can run the necessary applications. Whereas, in
+		Ø containerization which is a technology used by docker we acheive what is called as process isolation i.e. the 
+		dependency that any application has on an O.S is removed & they run as containers on top of Docker Engine. 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. What are the advantages of Docker / containerization?
+
+		1. Since docker achieves process isolation, these applications are no longer dependent on an O.S reducing the cost
+		   of buying a different licensed O.S's for different applications. 
+		These containers are lightweight i.e. they 
+		   consume lesser H/W resources compared to VM's. 
+		2. Migration of these containers is very simple and faster when we compare with migrating applications running on
+		   VM's. and creation and deletion of containers is easier than 
+		3. Set up of various environments that are necessary at every stage of Build, Ship, Run can be set up in relatively
+		   very short time. 
+
+		4. Dynamic Allocation 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. Can you list out some of the keywords/instructions used in Dockerfile
+							(or)
+	 Explain some of the keywords that you've used in a  dockerfile.
+
+		Ø A Dockerfile is a script that contains a set of instructions that are used to build a Docker image. 
+		The instructions are written in a specific syntax, and there are a number of keywords that can be used 
+		to specify various aspects of the image.
+
+		Ø Here are some of the most common Dockerfile keywords:
+
+		Ø FROM: Specifies the base image used to for your customized docker image to build upon it.
+		Ø MAINTAINER: Specifies the name of the author and email address of the person who maintains this Dockerfile.
+		Ø RUN: Executes a command during build time or image creation. Used for S/W package updates 
+		     & installations.
+		Ø EXPOSE: Specifies the network port(s) to be exposed by the container at runtime.
+		Ø VOLUME: Creates a mount point in the container that can be used to persist data.
+		Ø USER: specifies the default user who should login into the container.
+		Ø LABEL: Adds metadata of the image in key: value pairs.
+		Ø CMD : specifies the default command to run when a container is started from the image.
+		Ø ENTRYPOINT: specifies the executable that should run when the container starts. overriding the CMD instruction
+			Ø     which can also be overridden with docker flag called --entrypoint within the docker run command.
+		Ø ADD: copies files or directories from the build context/ host file system to the image /container and can also retrieve
+	             remote resources.
+		Ø COPY : Copies files or directories from the host machine to the container
+		Ø ENV: Sets environment variables that will be available to the running container.
+		Ø ARG: Defines a build-time variable that can be passed to the Docker build command 
+		Ø HEALTHCHECK: defines a command to check the health of a running container
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+6. List out some of the important commands you've used in docker / k8s 
+
+		(memorize at the least 10 commands)
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+7. Where are you storing docker images or Do you have experience in uploading images to Docker private
+		registry.
+
+		Ø I've worked on ECR for uploading customized Docker images.
+		Ø  I've set up an ECR private repository on AWS and assigned the necessary IAM roles for the EC2 Instance to access the ECR registry. 
+		Ø Then, we upload the customized images into this ECR. 
+
+				
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. explain any microservices architecture on docker that you've setup
+
+		Ø i've set up a development environment where the front end application was developed using HTML & CSS.
+		Ø And the actual application was developed on Java. For deploying the artifacts as an application server
+		we were using tomcat and our databases were running on PostgreSQL. 
+		Ø This entire development environment  i've set up in the form of docker containers by designing the docker compose files. 
+		Ø I've intially created custom bridge networks & specified the necessary subnet range for these networks. 
+		Ø Later, all these containers for the java application, tomcat & PostgreSQL, i've created as containers on this network. 
+		Ø for handling persistence of data, i've mounted the necessary docker volumes for the PostgreSQL database containers. 
+
+	
+		Ø Similarly I've also set up a selenium testing environments for performing cross-browser cross-platfrom
+		testing where our application had to be tested on Multiple browser & mulitple O.S combinations.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+9. Write down a sample docker compose file.
+
+		(ref. to notes & example files)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+10. Write a docker file that you've created for the project you're working on.
+ 
+ 		(ref. to notes)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+11.what is the differnce between docker compose and dockerfile.
+
+		Ø Docker compose is used to set up multi-container architectures & put them on a specific network. 
+		Ø Whereas dockerfile is used to create/build a custom based docker images. 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12. What are the different ways in which docker images can be created.
+
+		Ø We can create customized docker images using dockerfile or using docker commit command. If we use a
+		  dockerfile, we run       
+					docker build -t image_Name.    (for creating a customized docker image)
+
+		Ø whereas while using docker commit command, we first create a customized container & give
+					
+				docker commit container_Name image_Name
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+	
+13. How can we create a docker container which automatically uses the IP address of the host machine 
+
+		Ø We can create a container on a network called as Host network.
+		Ø Any container which runs on the host network will automatically use the IP address of the host.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+14. What are the different types of networks available in docker.
+
+		Docker mainly uses 4 networks.
+
+		1. Bridge Network : is the default network when containers run on the same server
+		2. Host Network:  is used when we want to create containers which automatically uses the IP address
+		                                of the underlining Host machine. This is generally used when we are trying to run                                databases as docker containers and we donot want to run any other containers on the
+				                 same server.	
+		3. Null Network: is used for creating containers which donot come under any network
+		4. Overlay Network: used when docker containers are running on multiple servers as in DockerSwarm.
+
+		I've personally implemented bridge and overlay networks in my previous project.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+15. What are the different types of docker volumes
+		
+		At the level of docker we have three types of volumes
+
+		1. Simple Docker Volumes
+		2. Sharable Docker Volumes
+		3. Docker volume containers
+
+		1. IN the case of Simple Docker Volumes, we only try to preserve the data on the host machine even though 
+		   container is deleted.
+		2. IN the case of Sharable Docker Volumes, we share the same docker volume between multiple containers.
+	           and 
+		3. In Docker volume containers, we create volumes using the docker volume create command, which we later
+		   mount at the time of creating the container.
+		   
+		If we want to handle volumes at the level of k8, we do that using
+
+		1. Persistent volumes         (PV)
+		2. Persistent volume claims   (PVC)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16. What are the different types of container restart policies that are on docker.
+
+		Ø The restart policies are defined in the docker run command using --restart option.
+		For this restart option we can pass, four different options:
+
+		always
+		off
+		on-failure
+		unless-stopped
+
+		Ø if the restart policy is set as always, irrespective of how many times the container
+		fails, it will always restart.
+
+		Ø if the restart policy is set as off, then the container will not start once it stops
+
+		Ø if the restart policy is set as on-failure, then the container automatically restarts
+		by itself on failure provided the user doesnot stop the container.
+
+		Ø if the restart policy is set as unless-stopped, then the container will start only when
+		it is manually stopped by the user.
+	
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. What is the default location of Docker Volumes
+
+		/var/lib/docker/volumes
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18. can we create docker compose files using any other file format other than YAML.
+
+		Yes, we can use JSON files also & these JSON files can be set up using dockercompose -f JSON_FILE_NAME up
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+19. Explain the troublshooting steps that you will perform on a docker container
+	
+		1. Checking the logs of the container by executing  -
+				
+			docker logs container_Name or container_id
+		
+		Ø if we find there's a problem with the ports then, we can check the ports info using - 
+
+			docker port container_Name or container_id
+
+		Ø   we can also get detailed information about the container using - 
+
+			docker inspect container_Name or container_id
+
+		Ø   this o/p comes up in JSON file format.
+
+		Ø   we can also execute commands like 
+	
+			docker exec -it container_Name or container_id bash
+
+		Ø this will takes us into the interactive terminal of the container, where we can fire
+		commands like 
+					ps, top (commands ) etc
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+20. Explain the architecture of Docker. 
+	
+		Docker mainly has 3 components.
+
+		1. Docker Client
+		2. Docker Daemon
+		3. Docker Registry
+
+		 Docker Client is an application which accepts the commands from users and passes it to 
+		   another process called as Docker Daemon. The Docker Daemon analyzes the type of command
+		   and routes these commands to work on Docker Images or containers or registry. 
+
+		 Registry is a location where all docker images are stored. 
+
+			This is of 3 types:
+				
+				1. Public
+				2. Private
+				3. Trusted
+
+			- Public registry is maintained by the Docker Corporation.
+			- Private registry can be setup with in our own servers or can be setup as a Service on aws called ECR
+			- Trusted registries are used with the enterprise version of Docker where we have to first install this
+			  software on Dockerhost which enables us to pull & push docker images securely and all these activities happen
+			  behind a firewall.
+
+		
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+21. What are docker images and containers.
+	
+		Docker Images are a combination of binaries and libraries which are necessary for a software application.
+		When these images are installed and we create running instances out of them, we call them as containers.
+
+
+
+
+
+
+
+                                                                              k8s
+
+1. Explain the components of K8s or explain the master-slave archtitecture of k8s
+k8s as a container orchestration platform has clusters & 
+each k8s cluster is a combination of master machine, also called as control plane or control node 
+which is responsible for managing the overall state of the cluster and slaves machines which are also called as nodes.
+The main machine where k8s is initialised in called as the control plane and the remaining machines which take the workload are called as nodes. 
+
+	On the master machine we have the components like:
+			
+		1. Container Run-time
+		2. kube api-server
+		3. Kube-Scheduler
+		4. kube control Manager
+		5. etcd
+		6. cloud control manager
+		
+	Ø Container-runtime is the containerization technology which is genrally docker 
+	Ø Kube api-sever is a validator. it check whether the user has permissions to execute a specific k8s command or not
+	Ø Kube scheduler is used by k8s to check the h/w resources on the slaves & decide which pod should run on which
+	  slave.
+	Ø  Control Manager is used by k8s to maintain the desired state i.e, if we run a tomcat pod with 6 replicas
+	  6 becomes the desired state and if one pod crashes, the control manager sees that there is a mismatch
+	  b/w the actual state and the desired state and recretes that pod.
+	Ø  etcd - this is a component which works like a repository which stores in key:value pairs, the information
+	  about the slaves that are available. the h/w resources on the slaves and the pods running on these slaves.
+	Ø  Both the Kube scheduler and the control manager perform their acitivities based on the information present
+          in the etcd.
+	Ø  cloud-controller-manager: The cloud controller manager is responsible for managing the cloud-specific resources
+	  in the cluster. It interacts with the cloud provider’s API to provision and manage the cloud resources.
+
+	Ø Each of these components can run on a different machine or on the same machine, depending on the 
+	size and complexity of the cluster.
+	
+	Ø The components on slave machine are:
+
+		1. Container Run-time
+		2. kubelet
+		3. kube-proxy
+
+
+	Ø  Kubelet is the primary agent runs on each node which takes instructions from the control plane and creates the pod on a
+	  specific slave.
+	Ø  Kube-proxy is used by k8s for service integrations b/w the pods and the service objects.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2. what is kubectl
+
+	kubectl is the command-line interface tool for interacting with a Kubernetes cluster. It allows users to deploy, 
+	inspect, and manage their applications and resources on the cluster. With kubectl, users can perform operations 
+	such as creating or deleting pods, scaling deployments, and updating configurations. It communicates with the 
+	Kubernetes API server to perform these operations. The tool provides a wide range of commands and options, allowing
+	users to work with a variety of Kubernetes resources, including pods, services, deployments, and more. 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. What is a pod in k8s. Can you explain what a pod in k8s
+
+	By definition, pod is a layer of abstraction on top of a container-runtime. The kubectl commands will work
+	only upto the level of the pod. The pod works like an interpretor and converts them in such a way that the
+	underlining container can understand. Since k8s is a container orchestration tool and it can work on any kind
+	of container-runtime i.e. Docker, CRi-O etc. The pod works like a translator for these underlining containers.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. Explain the differences b/w DockerSwarm & k8s.
+		
+	1. Docker Swarm works on docker based containers whereas k8s can work on any kind of containers
+	   Docker swarm is a docker container orchestration tool. k8s is a container orchestration tool.
+
+	2. Docker Swarm can perform only scaling, whereas k8s can perform both scaling and auto-scaling
+
+	3. Docker swarm cannot handle volumes, whereas k8s can handle volumes with the help of PV's and PVC's
+
+	4. Docker swarm can work only on stateless applications, whereas k8s can work on both stateless & stateful
+	   applications. For stateless applications, deployments are used & For statefull applications, it uses
+	   statefulSets
+
+	Note: this above answer can also be taken for lisitng out the disadvantages of docker swarm
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. Explain the disadvantages of k8s that you've experienced.
+
+	Ø Since i worked on both DockerSwarm and k8s, I saw that DockerSwarm can work on lesser H/W resources 
+	compared to k8s and it is way faster than k8s.
+	
+	Ø In DockerSwarm, the coding that is required for designing the docker stack files is very less compared
+	to the same architecture setup using k8s definition files. 
+
+	Ø Setting up of docker swarm cluter is much more easier than setting up k8s cluster.
+	
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6. Write a deployment / statefulSet definition file for setting up nginx or sth. else with 3 replicas along with 
+ it's relevant service definition files
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Explain the types of service objects in k8s.
+
+	There are mainly three types of service objects in k8s, which are
+
+
+	1. ClusterIP
+	    Sub-classificaiton within clusterIP  -- headless service object
+	2. NodePort
+	3. LoadBalancer
+
+
+	1. ClusterIP service object is the default service object & it is used when we want to create pods which 
+	   want to communicate with other pods in the cluster, but they donot requiree direct communication with
+	   the external world. 
+
+		- Headless service object is used in statefulSet's for communication b/w master & slave pods to
+		  maintain consistency of data.
+
+
+	2. NodePort is used for performing network loadbalacing by integrating the container Port, Host port & service port
+
+
+	3. LoadBalancer service obeject is uesd for generating a PublicIP for the entire cluster.
+	   this PublicIP has the capability to reference any number of slaves present in the k8s cluster
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. What is the difference b/w replicationController and ReplicaSet.
+
+	ReplicationController & ReplicaSet can both be used for performing activities like load balancing & scaling.
+	ReplicationController is a outdated way of doing things & replicaSet has replced replication Controller. 
+	ReplicaSet has an additional component called as Selector which has a child element called as matchLabels
+	
+	Using these matchLabels, it is possible for the replicaSet to search for pods based on a specific label
+	& create the desired count. 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+9. Explain the difference b/w replicaSets & deployments
+
+	Ø ReplicaSet is a high level object of k8s which can perform container orchestration activities like 
+	load balancing & scaling. Within the replicaSets we have pods and within pods are containers
+
+	Ø Whereas Deployment is a much higher level object compared to a replicaSet as it can perform not only
+	load balancing & scaling, but also rolling update operations.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10. What's the difference between Drain and cordon in k8s
+						(or)
+How do you make a node unavailable for maintainance activities on k8s
+
+	Ø When we mark a node for draining / When we drain a node, k8s will mark that node as unscheduleable 
+	and it will also evict the pods onto the other available nodes. Draining of pods happens in a 
+	controlled manner to avoid any disruption in the running applications
+
+	Ø In the case of Cordon, a node is simply marked as unschedulable & further pods will not be created 
+	on this node. But existing pods are left untouched and will remain available and reachable.
+
+	Ø Uncordon is the process of making a node reachable for the k8s cluster so that drained or cordoned 
+	nodes will be available and rejoin the cluster for further scheduling of pods.
+	
+	Ø  cordoning is a milder way of preventing new pods from being scheduled on a node, while draining 
+	is a more forceful way of evicting pods from a node.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+11. Can you explain about PV's and PVC's in k8s /  Explain the concept of Volumes in k8s
+
+	
+	Ø Volumes are used in k8s for handling persistence of data i.e. we would like to preserve the data
+	even though the pod crashes. This is mainly handled using volumes. 
+
+	Ø PV is a mechanism through which we specify how much storage of the cluster should be allocated 
+	for the purpose of volumes. This is done by creating a specific k8s object called as k8s PV.
+	and then we create a PVC's through which we reserve a certaain section of the PV.
+	And finally, this PVC is linked to a pod. 
+
+	Ø The PVC is connected to PV using 2 parameters:  - storageClassName     - accessModes.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12. Where do you store the k8s definition files and other components. 
+
+	At our organisation, the definition files are uploaded onto the remote GIT repository
+	Similarly the dockerfiles based on which the customized images are created are also
+	uploaded onto the remote GIT repository. But, for storing custimized docker images, 
+	we are using ECR on aws.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+13. Explain the different types of Probes used in k8s 
+											(or)
+How do you check whether a pod is running or ready to accept traffic
+
+
+	k8s uses 3 types of probes:    
+		
+		- Liveliness Probe
+		- Readiness Probe
+		- Startup probe
+
+	
+	Ø  Liveliness probe is used by kubelet to check when it can restart a container
+	  This is mainly useful in case of deadlocks where our applications are not able 
+	  to make any progress. In such a scenario liveliness probe helps in restarting 
+	  the pod & making the application available.
+
+	Ø  Readiness Probe is used by kubelet to decide when the container can start
+	  accepting traffic. This is done by the pod when it notices that all the 
+	  containers are ready. This is generally used by service load balancers to 
+	  decide whether to remove a pod or make it available in running condition for 
+	  a service.
+
+	Ø  Startup probes are used by kubelet to check when the container has started. If
+	  startup probe is configured, it will disable the liveliness & readiness probes.
+	  Until the startup probe succeeds, liveliness & readiness probes will not work.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+14. Explain Node Affinity & Pod Affinity.
+
+	Node Affinity is used by k8s to decide on which slave a pod should be supposed to 
+	be hosted/ scheduled, whereas pod affinity will link 2 pods so that these 2 pods 
+	run on the same node. 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+15. What is the purpose of storage class in k8s
+	
+	Ø StorageClass is mainly used by k8s admins to specify the type of storage that is being used.
+	Ø  These different storageClasses are in turn linked with Backup Policies & these are determined by the cluster admins. 
+
+	Each of these storage classes contians fields like:
+	
+		Provisioners
+
+		Reclaim Policies
+	
+	and these are used when a persistent volume belonging to this class is 
+	dynamically provisioned. 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16. How many volumes are available on a single node for each of the cloud service provider
+	
+	On AWS, we can create 39 volumes per node.
+	On GCP, we can create 16 volumes per node.
+	On Azure, we can create 16 volumes per node.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. Explain the concept of taints & tolerations.
+
+	Ø Taint is used in k8s when we want to repel or restrict pods from running on a specific slave. Any slave that is tainted will repel pods. 
+	Ø If we want pods to run on a tainted machine then we need to apply tolerations.
+
+	Ø When taint & tolerations match, the pod will be scheduled to run on a tainted machine.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18. Explain secrets & configMaps in k8s
+
+	Ø A secret is a k8s object that contains a small amount of sensitive data such as passwords or tokens etc. 
+	Ø This information is hidden in a secret object & then passed to the k8s definition files generally in the form environment variables. 
+
+	Ø ConfigMaps are used for storing non-confidential data in the form of key:value pairs and this data is used for the creation of the pod.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+19. How can we specify the resource limits for pods.
+				(or)
+       Explain the concept of requests & limits
+
+	Hardware resource allocation can be controlled in k8s using requests & limits.
+
+	Requests is the minimum amount of H/W that is guaranteed for the pods
+
+	Limits is the maximum amount of H/W that a pod can ask for and depending on
+	availability, the kubescheduler might give those resources. 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------	
+
+
+20. Explain the errors that you've encountered in k8s
+
+	I've encountered errors like
+
+	Ø  createcontainerconfig error
+
+	Ø  imagepullbackofferror (or) errorimagepull
+
+	Ø  crashloopbackoff error
+
+	Ø  kubernetesnodenotready
+
+	Ø  oomkilledkubernetes error
+
+
+	Ø  create container config error
+
+		generally comes up when we miss to a secret or configmap. So we can execute kubectl describe pods
+		pods command where it will show that a secret or a configmap is missing & based on that the error
+		can be resolved.
+
+
+	Ø  imagepullbackoff error
+
+		comes up when a docker image is not getting downloaded from the registry. In this case the pod will
+		not start as it is unable to create the container inside. In such a case we check whether we have logged
+		into the docker registry from where we are trying to downlaod this image. We will also check if that image
+		is available in the docker registry.
+
+
+	Ø  crashloopbackoff error
+
+		is generated when the node does not have sufficient H/W resources for the pod. Similarly this can also happen
+		if volume mounting fails. So we need to check if the PV & PVC that are attached are available.
+		This error may come up when there is an issue with an hostPort i.e. this port is already used or reserved by
+		some other service.
+
+	Ø  kubernetesnodenotready
+
+		This happens when a worker node shuts down or crashes. In such a scenario, all the statefulSet pods will 
+		become unavailable & the node status will be shown as not ready. In such a case, k8s waits for 5 min &
+		changes the status of the pod as unknown & will attempt to reschedule it on another node.
+
+	Ø   oomkilledkubernetes error
+
+		Out of Memory error, this happens when the k8s pods are conusuming more memory. In such a scenario, the 
+		underlining linux server keeps the track of how much memory is used & killed the pods.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+21. explain the differnce between deployments and statefulSets
+
+	Ø In Kubernetes, both StatefulSets and Deployments are used for managing stateless and stateful applications. 
+
+	Ø Both are high level objects in k8s which are used for setting up multiple replicas of the pods.
+
+	Ø But deployment is generally used in the case of stateless applications i.e. these applications
+	do not maintain any consistency in maintanence of data b/w pod restarts. They simply accept a
+	request coming from a particular source & send it some other background application. 
+
+	Ø Deployments do not maintain sticky identity due to which it is not possible to maintain the
+	link with the PVC & the corresponding PV. In the case of StatefulSet's they maintain a sticky
+	identity for the pods. The first pod comes with an index number "0" and it is called as master 
+	pod. The remianing pods will have the index numbers as 1 , 2 etc. 
+
+	Ø While creating a statefulSet, it is always the master pod that is created first and then the
+	slave pods. The master pod always ensures that these pods have the same identity irrespective
+	of how many times they crash. It also ensures that consistency of data is maintained b/w the pods.
+
+	Ø When a StatefulSet is scaled down, the pods are terminated in reverse order of creation, whereas 
+	with Deployments, the pods are terminated randomly.
+
+	Ø Since these pods have the same sticky identity, the connection with the PVC and the corresponding
+	PV remnains the same due to which data consistency is maintained.
